@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/logo.png" alt="Anchor Noir Studios Finance" width="280">
+</p>
+
 # Anchor Noir Studios Finance
 
 A private finance tracker for **Anchor Noir Studios**. It records every client project, every payment

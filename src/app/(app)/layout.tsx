@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Suspense } from "react";
 import { Nav } from "@/components/nav";
 import { getSession } from "@/lib/auth";
@@ -8,9 +9,12 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
   return (
     <div className="flex flex-1 flex-col md:flex-row">
       <aside className="border-b border-line p-4 md:w-60 md:shrink-0 md:border-b-0 md:border-r">
-        <div className="mb-4 px-3">
-          <p className="text-[10px] font-semibold tracking-[0.3em] text-accent">ANCHOR NOIR</p>
-          <p className="text-sm font-semibold">Studios Finance</p>
+        <div className="mb-4 flex items-center gap-3 px-3">
+          <Image src="/logo-mark-light.png" alt="" width={34} height={36} className="h-9 w-auto" priority />
+          <div>
+            <p className="text-[10px] font-semibold tracking-[0.3em] text-accent">ANCHOR NOIR</p>
+            <p className="text-sm font-semibold">Studios Finance</p>
+          </div>
         </div>
         <Suspense>
           <Nav />

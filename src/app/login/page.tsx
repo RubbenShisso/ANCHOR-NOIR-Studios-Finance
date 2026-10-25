@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ActionForm } from "@/components/action-form";
 import { signIn } from "./actions";
 
@@ -6,9 +7,17 @@ export default function LoginPage() {
     <main className="flex flex-1 items-center justify-center px-4 py-16">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
-          <p className="text-xs font-semibold tracking-[0.3em] text-accent">ANCHOR NOIR STUDIOS</p>
-          <h1 className="mt-2 text-2xl font-semibold">Finance</h1>
-          <p className="mt-1 text-sm text-muted">Team members only</p>
+          <h1>
+            <Image
+              src="/logo-light.png"
+              alt="Anchor Noir Studios Finance"
+              width={800}
+              height={534}
+              className="mx-auto h-auto w-64"
+              priority
+            />
+          </h1>
+          <p className="mt-4 text-sm text-muted">Team members only</p>
         </div>
         <ActionForm action={signIn} className="card space-y-4" submitLabel="Sign in">
           <div>
