@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* Noir theme. Chart colours follow the validated dark-mode data-viz palette. */
+:root {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --surface-2: #232321;
+  --border: rgba(255, 255, 255, 0.1);
+  --ink: #f0efec;
+  --ink-2: #c3c2b7;
+  --muted: #898781;
+  --grid: #2c2c2a;
+  --baseline: #383835;
+  --accent: #d4b36a;
+  --accent-ink: #0d0d0d;
+  --income: #3987e5;
+  --expense: #d95926;
+  --good: #0ca30c;
+  --warning: #fab219;
+  --critical: #d03b3b;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-income: var(--income);
+  --color-expense: var(--expense);
+  --color-good: var(--good);
+  --color-warning: var(--warning);
+  --color-critical: var(--critical);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+}
+
+@layer components {
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+  }
+  .label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--ink-2);
+    margin-bottom: 0.25rem;
+  }
+  .input {
+    width: 100%;
+    background: var(--page);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: var(--ink);
+  }
+  .input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: var(--accent-ink);
+    cursor: pointer;
+  }
+  .btn:hover {
+    filter: brightness(1.08);
+  }
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink-2);
+    border: 1px solid var(--border);
+  }
+  .table {
+    width: 100%;
+    font-size: 0.875rem;
+    border-collapse: collapse;
+  }
+  .table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: var(--muted);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .table td {
+    padding: 0.625rem 0.75rem;
+    border-bottom: 1px solid var(--grid);
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    white-space: nowrap;
+  }
+}
